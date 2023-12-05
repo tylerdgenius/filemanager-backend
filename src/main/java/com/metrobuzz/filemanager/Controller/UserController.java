@@ -1,4 +1,4 @@
-package com.metrobuzz.filemanager.Controllers;
+package com.metrobuzz.filemanager.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

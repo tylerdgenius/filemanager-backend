@@ -1,9 +1,10 @@
+// Service
 package com.metrobuzz.filemanager.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.metrobuzz.filemanager.Models.UserModel;
+import com.metrobuzz.filemanager.Model.UserModel;
 import com.metrobuzz.filemanager.Repository.UserRepo;
 
 @Service
@@ -22,5 +23,4 @@ public class UserService {
             return null;
         }
     }
-
 }
