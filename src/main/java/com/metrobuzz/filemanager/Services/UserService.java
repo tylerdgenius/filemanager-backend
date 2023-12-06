@@ -1,6 +1,8 @@
 // Service
 package com.metrobuzz.filemanager.Services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +24,9 @@ public class UserService {
         } catch (Exception exception) {
             return null;
         }
+    }
+
+    public List<UserModel> getAllUsers() {
+        return userRepo.findAll();
     }
 }

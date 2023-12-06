@@ -1,6 +1,6 @@
 package com.metrobuzz.filemanager.Model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Table(name = "filemanager_users")
 @Entity
