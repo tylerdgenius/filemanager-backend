@@ -1,5 +1,7 @@
 package com.metrobuzz.filemanager.Utils;
 
+import io.micrometer.common.lang.Nullable;
+
 public class ApiResponse {
 
     private boolean status;
@@ -18,8 +20,13 @@ public class ApiResponse {
         return new ApiResponse(true, message, payload, 200);
     }
 
-    public static ApiResponse error(String message, int code) {
-        return new ApiResponse(false, message, null, code);
+    public static ApiResponse error(String message, int code, @Nullable Object payload) {
+        return new ApiResponse(false, message, payload != null ? payload : getDefaultPayload(), code);
+    }
+
+    private static Object getDefaultPayload() {
+        // Provide your default payload value here
+        return null;
     }
 
     public boolean isStatus() {
