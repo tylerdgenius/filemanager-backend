@@ -6,15 +6,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.metrobuzz.filemanager.DTO.LoginRequestDto;
 import com.metrobuzz.filemanager.Model.UserModel;
 import com.metrobuzz.filemanager.Repository.UserRepo;
+import com.metrobuzz.filemanager.Utils.ApiResponse;
 
 @Service
-public class UserService {
+public class AuthService {
     private final UserRepo userRepo;
 
     @Autowired
-    public UserService(UserRepo userRepository) {
+    public AuthService(UserRepo userRepository) {
         this.userRepo = userRepository;
     }
 
@@ -28,5 +30,10 @@ public class UserService {
 
     public List<UserModel> getAllUsers() {
         return userRepo.findAll();
+    }
+
+    public ApiResponse loginUser(LoginRequestDto loginData) {
+        
+        return ApiResponse.success("Success", loginData);
     }
 }
